@@ -150,7 +150,70 @@ post_content like '%blue.com%'
 
 ## Replace text in column
 ```sql
+// method 1
 UPDATE `wp_posts` SET `post_content` = REPLACE(`post_content`, 'http://', 'https://')
+
+/method 2
+update youtube.importname set namespalte = replace(namespalte, '►HD & UNCUT◄ ็็็็็', '►HD & UNCUT◄')
+```
+
+
+## Insert text into column
+```sql
+insert into title (namespalte) values ('✖ LOST FOOTAGE OF UNBELIEVEABLE UNDERWATER SCENES! ✖')
+```
+
+
+## Update empty columns
+```sql
+UPDATE import SET text = 'https://www.tuneprotect.com/motor-easy-buy/' WHERE text IS NULL OR text = ''
+```
+
+
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+
+
+# Node.js
+
+
+
+## Import array into row
+```javascript
+let array = [
+single_item_ARRAY[0],
+t33n.temprankingNUMBER.toString(),
+t33n.URL
+]
+
+var query = "INSERT INTO single_item_url (text, ranking, search_url) VALUES (?,?,?)"
+connection.query(query, array, function (e, r, f){   });
+```
+
+
+
+## Find specific column
+```javascript
+let query = "Select * from single_item_url where text = ?";
+connection.query(query, single_item_ARRAY[0], function (e, r, f){ });
+```
+
+
+## Update column with specific text
+```javascript
+let query = 'UPDATE ' + mysql_database + '.single_item_url SET used = 1 WHERE single_item_url.text = ?';
+connection.query(query, t33n.ORIGINAL, function (e, r, f){ });
 ```
 
 
@@ -169,10 +232,21 @@ UPDATE `wp_posts` SET `post_content` = REPLACE(`post_content`, 'http://', 'https
 <br />
 
 
-# Thid party
+
+
+
+# Performance
 
 ## MySQL Performance Checker
 ```bash
 wget http://mysqltuner.pl/ -O mysqltuner.pl
 perl mysqltuner.pl
 ```
+
+## Change table engine for real big text inside of columns
+```bash
+ALTER TABLE `users`  ROW_FORMAT=DYNAMIC;
+ALTER TABLE `users`   ENGINE=MyISAM;
+```
+
+
