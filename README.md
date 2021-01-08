@@ -36,17 +36,50 @@ sudo mysql -e 'show processlist'
 
 
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
+<br><br>
+
+# Docker
+- https://hub.docker.com/_/mysql/
+```bash
+docker run -d \
+     --network todo-app --network-alias mysql \
+     -v todo-mysql-data:/var/lib/mysql \
+     -e MYSQL_ROOT_PASSWORD=secret \
+     -e MYSQL_DATABASE=todos \
+     mysql:5.7
+```
 
 
-<br />
-<br />
 
+
+
+
+
+
+
+
+
+
+
+<br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
 
 ## Import big SQL file via console
 ```bash
