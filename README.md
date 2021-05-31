@@ -417,7 +417,11 @@ UPDATE import SET text = 'https://www.tuneprotect.com/motor-easy-buy/' WHERE tex
 
 ## Check if last record from table contains specific text
 ```sql
+# Method #1
 SELECT MAX(ID) FROM LT_LOGS WHERE DNSLookup LIKE '%text we want to search%'
+
+# Method #2
+SELECT TOP 1 * FROM LT_LOGS WHERE DNSLookup LIKE '%text we want to search%' ORDER BY ID DESC
 ```
 
 
@@ -536,6 +540,7 @@ connection.query(query, single_item_ARRAY[0], function (e, r, f){ });
 let query = 'UPDATE ' + mysql_database + '.single_item_url SET used = 1 WHERE single_item_url.text = ?';
 connection.query(query, t33n.ORIGINAL, function (e, r, f){ });
 ```
+
 
 
 
