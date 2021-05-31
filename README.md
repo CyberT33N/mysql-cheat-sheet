@@ -48,6 +48,34 @@ sudo mysql -e 'show processlist'
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
  _____________________________________________________
  _____________________________________________________
@@ -76,10 +104,50 @@ docker run -d \
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
  _____________________________________________________
  _____________________________________________________
+
 <br><br>
+
+
 
 ## Import big SQL file via console
 ```bash
@@ -87,16 +155,79 @@ mysql -h 127.0.0.1 -P 3306 -uroot -pyourpasswordhere youtube < "Y:\youtube\disk1
 ```
 
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
 
+<br><br>
 
-<br />
-<br />
+
 
 ## Change password (XAMPP)
 
@@ -146,29 +277,104 @@ Instead in the XAMPP Shell, you can also change the password with phpMyAdmin, an
 
 
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
 
+<br><br>
 
-<br />
-<br />
 
 # SQL Queries
 
+
+<br><br>
 
 ## Create Table
 ```sql
 CREATE TABLE `scrap`.`logs` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `used` INT(11) NOT NULL DEFAULT '0' , `namespalte` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
 ```
 
+<br><br>
+
 ## Create Column
 ```sql
 ALTER TABLE `export_p` ADD `p_URL` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ;
 ```
+
+<br><br>
 
 ## Delete rows which contains specific text
 ```sql
@@ -180,6 +386,8 @@ OR
 post_content like '%blue.com%'
 ```
 
+<br><br>
+
 
 ## Replace text in column
 ```sql
@@ -190,12 +398,14 @@ UPDATE `wp_posts` SET `post_content` = REPLACE(`post_content`, 'http://', 'https
 update youtube.importname set namespalte = replace(namespalte, '►HD & UNCUT◄ ็็็็็', '►HD & UNCUT◄')
 ```
 
+<br><br>
 
 ## Insert text into column
 ```sql
 insert into title (namespalte) values ('✖ LOST FOOTAGE OF UNBELIEVEABLE UNDERWATER SCENES! ✖')
 ```
 
+<br><br>
 
 ## Update empty columns
 ```sql
@@ -203,18 +413,96 @@ UPDATE import SET text = 'https://www.tuneprotect.com/motor-easy-buy/' WHERE tex
 ```
 
 
+<br><br>
+
+## Check if last record from table contains specific text
+```sql
+SELECT MAX(ID) FROM LT_LOGS WHERE DNSLookup LIKE '%text we want to search%'
+```
 
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
 
+<br><br>
 
-<br />
-<br />
+
 
 
 
@@ -253,16 +541,52 @@ connection.query(query, t33n.ORIGINAL, function (e, r, f){ });
 
 
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
 
+<br><br>
 
-<br />
-<br />
+
 
 
 
